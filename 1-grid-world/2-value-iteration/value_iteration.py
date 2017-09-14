@@ -12,8 +12,8 @@ class ValueIteration:
     def value_iteration(self):
         next_value_table = [[0.0] * self.env.width
                                     for _ in range(self.env.height)]
-        for state in self.env.get_all_states():
-            if state == [2, 2]:
+        for state in self.env.get_all_states():#得到状态，即位置
+            if state == [2, 2]:#
                 next_value_table[state[0]][state[1]] = 0.0
                 continue
             value_list = []
