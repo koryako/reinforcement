@@ -215,7 +215,7 @@ def train():
                 env.render()
 
             # Added exploration noise
-            a = actor.choose_action(s)
+            a = actor.choose_action(s)#输入状态获取action
             a = np.clip(np.random.normal(a, var), *ACTION_BOUND)    # add randomness to action selection for exploration
             s_, r, done = env.step(a)
             M.store_transition(s, a, r, s_)
